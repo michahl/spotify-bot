@@ -114,7 +114,7 @@ app.get('/callback', async function(req, res) {
   }
 });
 
-app.listen(process.env.PORT || 3000);
+app.listen(3000);
 
 const { Intents } = DiscordJS
 
@@ -173,4 +173,4 @@ mongoose.connect(mongodb, {
 });
 
 
-client.login('MTAzMTYxMDg5NDY5NTgxMzI4MA.GrR_wL.VgZsP2TWATw_8GmHLJh3xOjymprJ6XrNreTfbE')
+client.login('MTAzMTYxMDg5NDY5NTgxMzI4MA.Gcl0b1.MLOsJr5LYluAOYbxICCwqvLEQmpbdIvHELqldM')

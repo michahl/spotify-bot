@@ -8,7 +8,7 @@ const { spotify, bot } = require('../../config.json')
 const client_id = spotify.id;
 const client_secret = spotify.secret;
 const discordServer = bot.support;
-const website = spotify.redirect_url + process.env.PORT || 3000;
+const website = spotify.redirect_url + 3000;
 
 const cooldowns = new Map();
 const cooldowns1 = new Map();
