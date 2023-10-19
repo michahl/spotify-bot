@@ -15,7 +15,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = spotify.id; // Your client id
 var client_secret = spotify.secret; // Your secret
-var redirect_uri = spotify.redirect_url + process.env.PORT || 3000 + '/callback'; // Your redirect uri
+var redirect_uri = spotify.redirect_url + 3000 + '/callback'; // Your redirect uri
 
 var generateRandomString = function(length) {
   var text = '';
@@ -173,4 +173,4 @@ mongoose.connect(mongodb, {
 });
 
 
-client.login('MTAzMTYxMDg5NDY5NTgxMzI4MA.Gcl0b1.MLOsJr5LYluAOYbxICCwqvLEQmpbdIvHELqldM')
+client.login('')

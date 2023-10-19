@@ -1062,12 +1062,12 @@ module.exports = {
                   message.channel.send({ embeds: [embed]})
                 }
               }), function(err) {
-                            if(err.body.error.status === 403){
+                            if(err.statusCode === 403){
                               const embed = new MessageEmbed()
                                 .setColor(`#FAA81A`)
                                 .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                               return message.channel.send({ embeds: [embed] })
-                            } else if(err.body.error.status === 404){
+                            } else if(err.statusCode === 404){
                               const embed = new MessageEmbed()
                                 .setColor(`#FAA81A`)
                                 .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -1239,12 +1239,12 @@ module.exports = {
                   .setDescription(`<:spotify:980925926542049381> <@${message.author.id}>: Switched device to **${name}**`)
                   return message.channel.send({ embeds: [embed] })
                 }, function(err) {
-                  if(err.body.error.status === 403){
+                  if(err.statusCode === 403){
                     const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:869866485798023168> <@${message.author.id}>: **Player command failed:** Premium required`)
                     return message.channel.send({ embeds: [embed] })
-                  } else if(err.body.error.status === 404){
+                  } else if(err.statusCode === 404){
                     const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:869866485798023168> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -1276,12 +1276,12 @@ module.exports = {
                             .setDescription(`<:spotify:956293073875374090> <@${message.author.id}>: Switched device to **${name}**`)
                             return message.channel.send({ embeds: [embed] })
                           }), function(err) {
-                            if(err.body.error.status === 403){
+                            if(err.statusCode === 403){
                               const embed = new MessageEmbed()
                                 .setColor(`#FAA81A`)
                                 .setDescription(`<:warning:869866485798023168> <@${message.author.id}>: **Player command failed:** Premium required`)
                               return message.channel.send({ embeds: [embed] })
-                            } else if(err.body.error.status === 404){
+                            } else if(err.statusCode === 404){
                               const embed = new MessageEmbed()
                                 .setColor(`#FAA81A`)
                                 .setDescription(`<:warning:869866485798023168> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -1295,12 +1295,12 @@ module.exports = {
                 });
               }
               }, function(err) {
-                if(err.body.error.status === 403){
+                if(err.statusCode === 403){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:869866485798023168> <@${message.author.id}>: **Player command failed:** Premium required`)
                   return message.channel.send({ embeds: [embed] })
-                } else if(err.body.error.status === 404){
+                } else if(err.statusCode === 404){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:869866485798023168> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -1342,12 +1342,12 @@ module.exports = {
                   .setDescription(`<:spotify:956293073875374090> <@${message.author.id}>: Switched device to **${name}**`)
                   return message.channel.send({ embeds: [embed] })
                 }, function(err) {
-                  if(err.body.error.status === 403){
+                  if(err.statusCode === 403){
                     const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:869866485798023168> <@${message.author.id}>: **Player command failed:** Premium required`)
                     return message.channel.send({ embeds: [embed] })
-                  } else if(err.body.error.status === 404){
+                  } else if(err.statusCode === 404){
                     const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:869866485798023168> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -1379,12 +1379,12 @@ module.exports = {
                             .setDescription(`<:spotify:956293073875374090> <@${message.author.id}>: Switched device to **${name}**`)
                             return message.channel.send({ embeds: [embed] })
                           }), function(err) {
-                            if(err.body.error.status === 403){
+                            if(err.statusCode === 403){
                               const embed = new MessageEmbed()
                                 .setColor(`#FAA81A`)
                                 .setDescription(`<:warning:869866485798023168> <@${message.author.id}>: **Player command failed:** Premium required`)
                               return message.channel.send({ embeds: [embed] })
-                            } else if(err.body.error.status === 404){
+                            } else if(err.statusCode === 404){
                               const embed = new MessageEmbed()
                                 .setColor(`#FAA81A`)
                                 .setDescription(`<:warning:869866485798023168> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -1569,17 +1569,17 @@ module.exports = {
                   .setDescription(`<:spotify:980925926542049381> <@${message.author.id}>: Adjusted **player volume** to \`${args[1]}%\``)
                 return message.channel.send({ embeds: [embed] })
               }, function(err) {
-                if(err.body.error.status === 403){
+                if(err.statusCode === 403){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                   return message.channel.send({ embeds: [embed] })
-                } else if(err.body.error.status === 404){
+                } else if(err.statusCode === 404){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                   return message.channel.send({ embeds: [embed] })
-                } else if(err.body.error.status === 401) {
+                } else if(err.statusCode === 401) {
                     var credentials = {
                       clientId: client_id,
                       clientSecret: client_secret
@@ -1603,12 +1603,12 @@ module.exports = {
                             .setDescription(`<:spotify:980925926542049381> <@${message.author.id}>: Adjusted **player volume** to \`${args[1]}%\``)
                           return message.channel.send({ embeds: [embed] }).catch( (e) => console.log(e));
                         }), function(err) {
-                          if(err.body.error.status === 403){
+                          if(err.statusCode === 403){
                             const embed = new MessageEmbed()
                               .setColor(`#FAA81A`)
                               .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                             return message.channel.send({ embeds: [embed] })
-                          } else if(err.body.error.status === 404){
+                          } else if(err.statusCode === 404){
                             const embed = new MessageEmbed()
                               .setColor(`#FAA81A`)
                               .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -1766,17 +1766,17 @@ module.exports = {
                   message.react("🔀")
                   message.react("✅")
                 }, function  (err) {
-                  if(err.body.error.status === 403){
+                  if(err.statusCode === 403){
                     const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                     return message.channel.send({ embeds: [embed] })
-                  } else if(err.body.error.status === 404){
+                  } else if(err.statusCode === 404){
                     const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                     return message.channel.send({ embeds: [embed] })
-                  } else if(err.body.error.status === 401) {
+                  } else if(err.statusCode === 401) {
                       var credentials = {
                         clientId: client_id,
                         clientSecret: client_secret
@@ -1795,12 +1795,12 @@ module.exports = {
                           spotifyApi.setAccessToken(data.body['access_token']);
                           spotifyApi.setShuffle(true)
                           .then(function (err) {
-                            if(err.body.error.status === 403){
+                            if(err.statusCode === 403){
                               const embed = new MessageEmbed()
                               .setColor(`#FAA81A`)
                               .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                               return message.channel.send({ embeds: [embed] })
-                            } else if(err.body.error.status === 404){
+                            } else if(err.statusCode === 404){
                               const embed = new MessageEmbed()
                               .setColor(`#FAA81A`)
                               .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -1829,17 +1829,17 @@ module.exports = {
                   message.react("🔀")
                   message.react("✅")
                 }, function  (err) {
-                  if(err.body.error.status === 403){
+                  if(err.statusCode === 403){
                     const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                     return message.channel.send({ embeds: [embed] })
-                  } else if(err.body.error.status === 404){
+                  } else if(err.statusCode === 404){
                     const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                     return message.channel.send({ embeds: [embed] })
-                  } else if(err.body.error.status === 401) {
+                  } else if(err.statusCode === 401) {
                       var credentials = {
                         clientId: client_id,
                         clientSecret: client_secret
@@ -1858,12 +1858,12 @@ module.exports = {
                           spotifyApi.setAccessToken(data.body['access_token']);
                           spotifyApi.setShuffle(false)
                           .then(function (err) {
-                            if(err.body.error.status === 403){
+                            if(err.statusCode === 403){
                               const embed = new MessageEmbed()
                               .setColor(`#FAA81A`)
                               .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                               return message.channel.send({ embeds: [embed] })
-                            } else if(err.body.error.status === 404){
+                            } else if(err.statusCode === 404){
                               const embed = new MessageEmbed()
                               .setColor(`#FAA81A`)
                               .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -1892,17 +1892,17 @@ module.exports = {
                     message.react("🔀")
                     message.react("✅")
                   }, function  (err) {
-                    if(err.body.error.status === 403){
+                    if(err.statusCode === 403){
                       const embed = new MessageEmbed()
                         .setColor(`#FAA81A`)
                         .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                       return message.channel.send({ embeds: [embed] })
-                    } else if(err.body.error.status === 404){
+                    } else if(err.statusCode === 404){
                       const embed = new MessageEmbed()
                         .setColor(`#FAA81A`)
                         .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                       return message.channel.send({ embeds: [embed] })
-                    } else if(err.body.error.status === 401) {
+                    } else if(err.statusCode === 401) {
                         var credentials = {
                           clientId: client_id,
                           clientSecret: client_secret
@@ -1921,12 +1921,12 @@ module.exports = {
                             spotifyApi.setAccessToken(data.body['access_token']);
                             spotifyApi.setShuffle(true)
                             .then(function (err) {
-                              if(err.body.error.status === 403){
+                              if(err.statusCode === 403){
                                 const embed = new MessageEmbed()
                                 .setColor(`#FAA81A`)
                                 .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                                 return message.channel.send({ embeds: [embed] })
-                              } else if(err.body.error.status === 404){
+                              } else if(err.statusCode === 404){
                                 const embed = new MessageEmbed()
                                 .setColor(`#FAA81A`)
                                 .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -2091,17 +2091,17 @@ module.exports = {
                 console.log('Something went wrong!', err);
               });
             }, function(err) {
-              if(err.body.error.status === 403){
+              if(err.statusCode === 403){
                 const embed = new MessageEmbed()
                   .setColor(`#FAA81A`)
                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                 return message.channel.send({ embeds: [embed] })
-              } else if(err.body.error.status === 404){
+              } else if(err.statusCode === 404){
                 const embed = new MessageEmbed()
                   .setColor(`#FAA81A`)
                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                 return message.channel.send({ embeds: [embed] })
-              } else if(err.body.error.status === 401) {
+              } else if(err.statusCode === 401) {
                   var credentials = {
                     clientId: client_id,
                     clientSecret: client_secret
@@ -2136,12 +2136,12 @@ module.exports = {
                           console.log('Something went wrong!', err);
                         });
                       }, function(err) {
-                        if(err.body.error.status === 403){
+                        if(err.statusCode === 403){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                           return message.channel.send({ embeds: [embed] })
-                        } else if(err.body.error.status === 404){
+                        } else if(err.statusCode === 404){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -2292,17 +2292,17 @@ module.exports = {
               message.react('⏸️')
               message.react('✅')
             }, function(err) {
-              if(err.body.error.status === 403){
+              if(err.statusCode === 403){
                 const embed = new MessageEmbed()
                   .setColor(`#FAA81A`)
                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                 return message.channel.send({ embeds: [embed] })
-              } else if(err.body.error.status === 404){
+              } else if(err.statusCode === 404){
                 const embed = new MessageEmbed()
                   .setColor(`#FAA81A`)
                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                 return message.channel.send({ embeds: [embed] })
-              } else if(err.body.error.status === 401) {
+              } else if(err.statusCode === 401) {
                   var credentials = {
                     clientId: client_id,
                     clientSecret: client_secret
@@ -2325,12 +2325,12 @@ module.exports = {
                         message.react('⏸️')
                         message.react('✅')
                       }, function(err) {
-                        if(err.body.error.status === 403){
+                        if(err.statusCode === 403){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                           return message.channel.send({ embeds: [embed] })
-                        } else if(err.body.error.status === 404){
+                        } else if(err.statusCode === 404){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -2481,17 +2481,17 @@ module.exports = {
               message.react('▶️')
               message.react('✅')
             }, function(err) {
-              if(err.body.error.status === 403){
+              if(err.statusCode === 403){
                 const embed = new MessageEmbed()
                   .setColor(`#FAA81A`)
                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                 return message.channel.send({ embeds: [embed] })
-              } else if(err.body.error.status === 404){
+              } else if(err.statusCode === 404){
                 const embed = new MessageEmbed()
                   .setColor(`#FAA81A`)
                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                 return message.channel.send({ embeds: [embed] })
-              } else if(err.body.error.status === 401) {
+              } else if(err.statusCode === 401) {
                   var credentials = {
                     clientId: client_id,
                     clientSecret: client_secret
@@ -2514,12 +2514,12 @@ module.exports = {
                         message.react('▶️')
                         message.react('✅')
                       }, function(err) {
-                        if(err.body.error.status === 403){
+                        if(err.statusCode === 403){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                           return message.channel.send({ embeds: [embed] })
-                        } else if(err.body.error.status === 404){
+                        } else if(err.statusCode === 404){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -2670,17 +2670,17 @@ module.exports = {
               message.react('⏮️')
               message.react('✅')
             }, function(err) {
-              if(err.body.error.status === 403){
+              if(err.statusCode === 403){
                 const embed = new MessageEmbed()
                   .setColor(`#FAA81A`)
                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                 return message.channel.send({ embeds: [embed] })
-              } else if(err.body.error.status === 404){
+              } else if(err.statusCode === 404){
                 const embed = new MessageEmbed()
                   .setColor(`#FAA81A`)
                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                 return message.channel.send({ embeds: [embed] })
-              } else if(err.body.error.status === 401) {
+              } else if(err.statusCode === 401) {
                   var credentials = {
                     clientId: client_id,
                     clientSecret: client_secret
@@ -2703,12 +2703,12 @@ module.exports = {
                         message.react('⏮️')
                         message.react('✅')
                       }, function(err) {
-                        if(err.body.error.status === 403){
+                        if(err.statusCode === 403){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                           return message.channel.send({ embeds: [embed] })
-                        } else if(err.body.error.status === 404){
+                        } else if(err.statusCode === 404){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -2860,17 +2860,17 @@ module.exports = {
                 message.react('🔂')
                 message.react('✅')
               }, function(err) {
-                if(err.body.error.status === 403){
+                if(err.statusCode === 403){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                   return message.channel.send({ embeds: [embed] })
-                } else if(err.body.error.status === 404){
+                } else if(err.statusCode === 404){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                   return message.channel.send({ embeds: [embed] })
-                } else if(err.body.error.status === 401) {
+                } else if(err.statusCode === 401) {
                     var credentials = {
                       clientId: client_id,
                       clientSecret: client_secret
@@ -2893,12 +2893,12 @@ module.exports = {
                           message.react('🔂')
                           message.react('✅')
                         }, function(err) {
-                          if(err.body.error.status === 403){
+                          if(err.statusCode === 403){
                             const embed = new MessageEmbed()
                             .setColor(`#FAA81A`)
                             .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                             return message.channel.send({ embeds: [embed] })
-                          } else if(err.body.error.status === 404){
+                          } else if(err.statusCode === 404){
                             const embed = new MessageEmbed()
                             .setColor(`#FAA81A`)
                             .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -2926,17 +2926,17 @@ module.exports = {
                   message.react('🔁')
                   message.react('✅')
                 }, function(err) {
-                  if(err.body.error.status === 403){
+                  if(err.statusCode === 403){
                     const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                     return message.channel.send({ embeds: [embed] })
-                  } else if(err.body.error.status === 404){
+                  } else if(err.statusCode === 404){
                     const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                     return message.channel.send({ embeds: [embed] })
-                  } else if(err.body.error.status === 401) {
+                  } else if(err.statusCode === 401) {
                       var credentials = {
                         clientId: client_id,
                         clientSecret: client_secret
@@ -2959,12 +2959,12 @@ module.exports = {
                             message.react('🔁')
                             message.react('✅')
                           }, function(err) {
-                            if(err.body.error.status === 403){
+                            if(err.statusCode === 403){
                               const embed = new MessageEmbed()
                               .setColor(`#FAA81A`)
                               .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                               return message.channel.send({ embeds: [embed] })
-                            } else if(err.body.error.status === 404){
+                            } else if(err.statusCode === 404){
                               const embed = new MessageEmbed()
                               .setColor(`#FAA81A`)
                               .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -2991,17 +2991,17 @@ module.exports = {
               .then(function() {
                 message.react('✅')
               }, function(err) {
-                if(err.body.error.status === 403){
+                if(err.statusCode === 403){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                   return message.channel.send({ embeds: [embed] })
-                } else if(err.body.error.status === 404){
+                } else if(err.statusCode === 404){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                   return message.channel.send({ embeds: [embed] })
-                } else if(err.body.error.status === 401) {
+                } else if(err.statusCode === 401) {
                     var credentials = {
                       clientId: client_id,
                       clientSecret: client_secret
@@ -3023,12 +3023,12 @@ module.exports = {
                         .then(function() {
                           message.react('✅')
                         }, function(err) {
-                          if(err.body.error.status === 403){
+                          if(err.statusCode === 403){
                             const embed = new MessageEmbed()
                             .setColor(`#FAA81A`)
                             .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                             return message.channel.send({ embeds: [embed] })
-                          } else if(err.body.error.status === 404){
+                          } else if(err.statusCode === 404){
                             const embed = new MessageEmbed()
                             .setColor(`#FAA81A`)
                             .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -3056,17 +3056,17 @@ module.exports = {
                 message.react('🔁')
                 message.react('✅')
               }, function(err) {
-                if(err.body.error.status === 403){
+                if(err.statusCode === 403){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                   return message.channel.send({ embeds: [embed] })
-                } else if(err.body.error.status === 404){
+                } else if(err.statusCode === 404){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                   return message.channel.send({ embeds: [embed] })
-                } else if(err.body.error.status === 401) {
+                } else if(err.statusCode === 401) {
                     var credentials = {
                       clientId: client_id,
                       clientSecret: client_secret
@@ -3089,12 +3089,12 @@ module.exports = {
                           message.react('🔁')
                           message.react('✅')
                         }, function(err) {
-                          if(err.body.error.status === 403){
+                          if(err.statusCode === 403){
                             const embed = new MessageEmbed()
                             .setColor(`#FAA81A`)
                             .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                             return message.channel.send({ embeds: [embed] })
-                          } else if(err.body.error.status === 404){
+                          } else if(err.statusCode === 404){
                             const embed = new MessageEmbed()
                             .setColor(`#FAA81A`)
                             .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -3273,17 +3273,17 @@ module.exports = {
               message.react('⏩')
               message.react('✅')
             }, function(err) {
-              if(err.body.error.status === 403){
+              if(err.statusCode === 403){
                 const embed = new MessageEmbed()
                   .setColor(`#FAA81A`)
                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                 return message.channel.send({ embeds: [embed] })
-              } else if(err.body.error.status === 404){
+              } else if(err.statusCode === 404){
                 const embed = new MessageEmbed()
                   .setColor(`#FAA81A`)
                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                 return message.channel.send({ embeds: [embed] })
-              } else if(err.body.error.status === 401) {
+              } else if(err.statusCode === 401) {
                   var credentials = {
                     clientId: client_id,
                     clientSecret: client_secret
@@ -3306,12 +3306,12 @@ module.exports = {
                         message.react('⏩')
                         message.react('✅')
                       }, function(err) {
-                        if(err.body.error.status === 403){
+                        if(err.statusCode === 403){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                           return message.channel.send({ embeds: [embed] })
-                        } else if(err.body.error.status === 404){
+                        } else if(err.statusCode === 404){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -3468,17 +3468,17 @@ module.exports = {
                   console.log('Something went wrong!', err);
                 });
               }, function(err) {
-                if(err.body.error.status === 403){
+                if(err.statusCode === 403){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                   return message.channel.send({ embeds: [embed] })
-                } else if(err.body.error.status === 404){
+                } else if(err.statusCode === 404){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                   return message.channel.send({ embeds: [embed] })
-                } else if(err.body.error.status === 401) {
+                } else if(err.statusCode === 401) {
                     var credentials = {
                       clientId: client_id,
                       clientSecret: client_secret
@@ -3507,12 +3507,12 @@ module.exports = {
                             console.log('Something went wrong!', err);
                           });
                         }, function(err) {
-                          if(err.body.error.status === 403){
+                          if(err.statusCode === 403){
                             const embed = new MessageEmbed()
                             .setColor(`#FAA81A`)
                             .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                             return message.channel.send({ embeds: [embed] })
-                          } else if(err.body.error.status === 404){
+                          } else if(err.statusCode === 404){
                             const embed = new MessageEmbed()
                             .setColor(`#FAA81A`)
                             .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -3692,17 +3692,17 @@ module.exports = {
                       message.react('▶️')
                       message.react('✅')
                     }, function(err) {
-                      if(err.body.error.status === 403){
+                      if(err.statusCode === 403){
                         const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                         return message.channel.send({ embeds: [embed] })
-                      } else if(err.body.error.status === 404){
+                      } else if(err.statusCode === 404){
                         const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                         return message.channel.send({ embeds: [embed] })
-                      } else if(err.body.error.status === 401) {
+                      } else if(err.statusCode === 401) {
                           var credentials = {
                             clientId: client_id,
                             clientSecret: client_secret
@@ -3724,12 +3724,12 @@ module.exports = {
                                 message.react('▶️')
                                 message.react('✅')
                               }, function(err) {
-                                if(err.body.error.status === 403){
+                                if(err.statusCode === 403){
                                   const embed = new MessageEmbed()
                                   .setColor(`#FAA81A`)
                                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                                   return message.channel.send({ embeds: [embed] })
-                                } else if(err.body.error.status === 404){
+                                } else if(err.statusCode === 404){
                                   const embed = new MessageEmbed()
                                   .setColor(`#FAA81A`)
                                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -3744,12 +3744,12 @@ module.exports = {
                           }
                         })
                   }, function(err) {
-                    if(err.body.error.status === 403){
+                    if(err.statusCode === 403){
                       const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                       return message.channel.send({ embeds: [embed] })
-                    } else if(err.body.error.status === 404){
+                    } else if(err.statusCode === 404){
                       const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -3778,17 +3778,17 @@ module.exports = {
                   message.react('▶️')
                   message.react('✅')
                 }, function(err) {
-                  if(err.body.error.status === 403){
+                  if(err.statusCode === 403){
                     const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                     return message.channel.send({ embeds: [embed] })
-                  } else if(err.body.error.status === 404){
+                  } else if(err.statusCode === 404){
                     const embed = new MessageEmbed()
                       .setColor(`#FAA81A`)
                       .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                     return message.channel.send({ embeds: [embed] })
-                  } else if(err.body.error.status === 401) {
+                  } else if(err.statusCode === 401) {
                       var credentials = {
                         clientId: client_id,
                         clientSecret: client_secret
@@ -3810,12 +3810,12 @@ module.exports = {
                             message.react('▶️')
                             message.react('✅')
                           }, function(err) {
-                            if(err.body.error.status === 403){
+                            if(err.statusCode === 403){
                               const embed = new MessageEmbed()
                               .setColor(`#FAA81A`)
                               .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                               return message.channel.send({ embeds: [embed] })
-                            } else if(err.body.error.status === 404){
+                            } else if(err.statusCode === 404){
                               const embed = new MessageEmbed()
                               .setColor(`#FAA81A`)
                               .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -4002,17 +4002,17 @@ module.exports = {
                         message.react('▶️')
                         message.react('✅')
                       }, function(err) {
-                        if(err.body.error.status === 403){
+                        if(err.statusCode === 403){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                           message.channel.send({ embeds: [embed] })
-                        } else if(err.body.error.status === 404){
+                        } else if(err.statusCode === 404){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                           message.channel.send({ embeds: [embed] })
-                        } else if(err.body.error.status === 401) {
+                        } else if(err.statusCode === 401) {
                           var credentials = {
                             clientId: client_id,
                             clientSecret: client_secret
@@ -4037,12 +4037,12 @@ module.exports = {
                                 message.react('▶️')
                                 message.react('✅')
                               }, function(err) {
-                                if(err.body.error.status === 403){
+                                if(err.statusCode === 403){
                                   const embed = new MessageEmbed()
                                   .setColor(`#FAA81A`)
                                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                                   return message.channel.send({ embeds: [embed] })
-                                } else if(err.body.error.status === 404){
+                                } else if(err.statusCode === 404){
                                   const embed = new MessageEmbed()
                                   .setColor(`#FAA81A`)
                                   .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -4078,17 +4078,17 @@ module.exports = {
                           message.react('▶️')
                           message.react('✅')
                         }, function(err) {
-                          if(err.body.error.status === 403){
+                          if(err.statusCode === 403){
                             const embed = new MessageEmbed()
                             .setColor(`#FAA81A`)
                             .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                             message.channel.send({ embeds: [embed] })
-                          } else if(err.body.error.status === 404){
+                          } else if(err.statusCode === 404){
                             const embed = new MessageEmbed()
                             .setColor(`#FAA81A`)
                             .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                             message.channel.send({ embeds: [embed] })
-                          } else if(err.body.error.status === 401) {
+                          } else if(err.statusCode === 401) {
                             var credentials = {
                               clientId: client_id,
                               clientSecret: client_secret
@@ -4119,12 +4119,12 @@ module.exports = {
                           message.react('▶️')
                           message.react('✅')
                         }, function(err) {
-                                  if(err.body.error.status === 403){
+                                  if(err.statusCode === 403){
                                     const embed = new MessageEmbed()
                                     .setColor(`#FAA81A`)
                                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                                     return message.channel.send({ embeds: [embed] })
-                                  } else if(err.body.error.status === 404){
+                                  } else if(err.statusCode === 404){
                                     const embed = new MessageEmbed()
                                     .setColor(`#FAA81A`)
                                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -4139,12 +4139,12 @@ module.exports = {
                             }
                           })
                       }, function(err) {
-                        if(err.body.error.status === 403){
+                        if(err.statusCode === 403){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                           message.channel.send({ embeds: [embed] })
-                        } else if(err.body.error.status === 404){
+                        } else if(err.statusCode === 404){
                           const embed = new MessageEmbed()
                           .setColor(`#FAA81A`)
                           .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -4183,17 +4183,17 @@ module.exports = {
                       message.react('▶️')
                       message.react('✅')
                     }, function(err) {
-                      if(err.body.error.status === 403){
+                      if(err.statusCode === 403){
                         const embed = new MessageEmbed()
                         .setColor(`#FAA81A`)
                         .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                         message.channel.send({ embeds: [embed] })
-                      } else if(err.body.error.status === 404){
+                      } else if(err.statusCode === 404){
                         const embed = new MessageEmbed()
                         .setColor(`#FAA81A`)
                         .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                         message.channel.send({ embeds: [embed] })
-                      } else if(err.body.error.status === 401) {
+                      } else if(err.statusCode === 401) {
                         var credentials = {
                           clientId: client_id,
                           clientSecret: client_secret
@@ -4224,12 +4224,12 @@ module.exports = {
                       message.react('▶️')
                       message.react('✅')
                     }, function(err) {
-                              if(err.body.error.status === 403){
+                              if(err.statusCode === 403){
                                 const embed = new MessageEmbed()
                                 .setColor(`#FAA81A`)
                                 .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** Premium required`)
                                 return message.channel.send({ embeds: [embed] })
-                              } else if(err.body.error.status === 404){
+                              } else if(err.statusCode === 404){
                                 const embed = new MessageEmbed()
                                 .setColor(`#FAA81A`)
                                 .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
@@ -4412,12 +4412,12 @@ module.exports = {
                   message.channel.send({ embeds: [embed2]});
                 });
               }, function(err) {
-                if(err.body.error.status === 404){
+                if(err.statusCode === 404){
                   const embed = new MessageEmbed()
                     .setColor(`#FAA81A`)
                     .setDescription(`<:warning:980927735327236146> <@${message.author.id}>: **Player command failed:** No active device found`)
                   return message.channel.send({ embeds: [embed] })
-                } else if(err.body.error.status === 401) {
+                } else if(err.statusCode === 401) {
                     var credentials = {
                       clientId: client_id,
                       clientSecret: client_secret

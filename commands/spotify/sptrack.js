@@ -1,6 +1,11 @@
 const { MessageEmbed } = require("discord.js");
 var Spotify = require('node-spotify-api');
 
+const { spotify } = require('../../config.json')
+var client_id = spotify.id;
+var client_secret = spotify.secret;
+
+
 module.exports = {
     aliases: ['spotifytrack'],
     category: 'Spotify',
@@ -19,8 +24,8 @@ module.exports = {
 
         const query = args.join(' ');
         var spotify = new Spotify({
-            id: '47b987353c674ea396ec8b26e1a2211b',
-            secret: '94c9716f71f248eaaddd6fae6a5f55d2'
+            id: client_id,
+            secret: client_secret
         });
            
         spotify.search({ type: 'track', query: query }, function(err, data) {
