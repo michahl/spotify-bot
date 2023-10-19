@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.2">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarala&amp;display=swap">
+    <link rel="stylesheet" href="https://bleed.bot/css/new-wPwYv8dKsjn2yfrFnXkc.css" type="text/css">
+    <link rel="shortcut icon" href="https://bleed.bot/img/logo_transparent.png">
+    <title>Spotify Authentication - Spoti</title>
+</head>
+<body>
+
+
+<div class="app-1jaXl app-desktop">
+<nav class="nav-kTxQW">
+    <div class="navbar-2kznD">
+        <a class="brand-1V9Xv" href="/"><span class="brand-logo-2bi8d"></span><span class="brand-text-1QXBj">bleed</span></a>
+        <ul>
+            <li><a href="https://bleed.bot/faq">FAQ</a></li>
+            <li><a href="https://bleed.bot/help">Commands</a></li>
+            <li><a href="https://docs.bleed.bot">Documentation</a></li>
+            <li><a href="https://bleed.bot/discord">Discord</a></li>
+        </ul>
+    </div>
+</nav>
+<p style="margin: 10px" id="code"></p>
+</div>
+
+
+<script>
+Url = {
+get get(){
+    var vars= {};
+    if(window.location.search.length!==0)
+        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value){
+            key=decodeURIComponent(key);
+            if(typeof vars[key]==="undefined") {vars[key]= decodeURIComponent(value);}
+            else {vars[key]= [].concat(vars[key], decodeURIComponent(value));}
+        });
+    return vars;
+}
+};
+var code = Url.get.code;
+var state = Url.get.state; 
+
+document.getElementById("code").innerHTML = `Copy paste in the channel where you ran the login command: ` + `${state.bold()}`;
+
+</script> 
+
+</body>
+</html>

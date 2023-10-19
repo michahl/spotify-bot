@@ -1,0 +1,16 @@
+{
+	"bot": {
+		"prefix": ",",
+		"support": "https://discord.gg/",
+		"clientID": "1031610894695813280",
+		"ownerID": "971337919136690207",
+		"testers": ["971337919136690207"]
+
+	},
+	"mongodb": "mongodb+srv://admin1:fLFEfRSW7MiOkis2@cluster0.bsbysrs.mongodb.net/?retryWrites=true&w=majority",
+	"spotify": {
+		"redirect_url": "http://localhost:",
+		"id": "d10fcc90074f45cfb7793194516a0ffc",
+		"secret": "5f5d7b43829e41cf87d3c489d89fedb2"
+    }
+}
