@@ -51,4 +51,7 @@ TOKEN=
 node .
 ```
 
+## 📝 Commands
+[Commands Wiki](https://github.com/michahl/spotify-bot/wiki/Commands)
+
 
