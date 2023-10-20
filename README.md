@@ -1,6 +1,5 @@
 ## About
-A Discord bot intended to interact with [Spotify](https://spotify.com/) to let users control their player from the Discord Application using commands.
-
+A Discord bot intended to interact with [Spotify](https://spotify.com/) to let users control their player from the Discord Application using commands.     
 `Only Spotify premium accounts can interact with the bot`
 
 ## 🚀 Getting Started
